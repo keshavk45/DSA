@@ -32,43 +32,72 @@
 //METHOD 2: USING SORTING
 //TIME COMPLEXITY : O(NlogN)
 
-package Strings;
+// package Strings;
 
-import java.util.*;
+// import java.util.*;
+
+
+// public class MaximumFrequency {
+//     public static void main(String[] args) {
+//         String s = "character";
+//         int n = s.length();
+//         int maxfreq = 0;
+//         char ans = s.charAt(0);
+//         char[] arr = s.toCharArray();
+//         Arrays.sort(arr);
+//         int i = 0; 
+//         int j = 0;
+//         while(j<n){
+//             if(arr[i]==arr[j]){
+//                 j++;
+//             } else {
+//                 int freq = j - i;
+//                 if(freq > maxfreq){
+//                     maxfreq = freq;
+//                     ans = arr[i];
+//                 }
+//                 i = j;
+//             }
+//         }
+
+//         //last sequence checking
+//         int freq = j - i;
+//         if(freq > maxfreq){
+//             maxfreq = freq;
+//             ans = arr[i];
+//         }
+
+//         System.out.println(ans);
+//     }
+// }
+
+
+//METHOD 3: USING FREQUENCY ARRAY
+//TIME COMPLEXITY : O(N)
+package Strings;
 
 
 public class MaximumFrequency {
     public static void main(String[] args) {
         String s = "character";
         int n = s.length();
+        int[] freq = new int[26];
+        for(int i = 0 ; i<n ; i++){
+            char ch = s.charAt(i);
+            int idx = ch-97;
+            freq[idx]++;
+        }
         int maxfreq = 0;
         char ans = s.charAt(0);
-        char[] arr = s.toCharArray();
-        Arrays.sort(arr);
-        int i = 0; 
-        int j = 0;
-        while(j<n){
-            if(arr[i]==arr[j]){
-                j++;
-            } else {
-                int freq = j - i;
-                if(freq > maxfreq){
-                    maxfreq = freq;
-                    ans = arr[i];
-                }
-                i = j;
+        for(int i = 0 ; i<26 ; i++){
+            if(freq[i]>maxfreq){
+                maxfreq = freq[i];
+                ans = (char)(i + 97);
+
             }
         }
-
-        //last sequence checking
-        int freq = j - i;
-        if(freq > maxfreq){
-            maxfreq = freq;
-            ans = arr[i];
-        }
-
         System.out.println(ans);
-    }
+        
 }
-
+}
 
