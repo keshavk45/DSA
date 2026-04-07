@@ -1,6 +1,6 @@
-//Reverse a string without using inbuilt function
-
 package Strings;
+
+//Reverse a string without using inbuilt function
 
 public class ReverseStringBuilder {
     public static void main(String[] args) {
