@@ -10,12 +10,23 @@ class Node{
 
 public class DisplayLinkedList {
 
+    public static void recursiveDisplay(Node head){
+        if(head == null) return;
+        System.out.print(head.val + " ");
+        recursiveDisplay(head.next);
+    }
+
     public static void display(Node head){
-        Node temp = head;
-        while(temp != null){
+        // Node temp = head;
+        // while(temp != null){
+        //     System.out.print(temp.val + " ");
+        //     temp = temp.next;
+        // }
+
+        for(Node temp = head ; temp!=null ; temp = temp.next){
             System.out.print(temp.val + " ");
-            temp = temp.next;
         }
+
     }
     public static void main(String[] args) {
         Node a = new Node(10);
@@ -26,7 +37,8 @@ public class DisplayLinkedList {
         //connect karne k lie
         a.next = b;
         b.next = c;
-        display(a);
+        // display(a);
+        recursiveDisplay(a);
     }
     
 }
