@@ -66,13 +66,29 @@ class LinkedList{
             addAtTail(val);
         }else{
             Node temp = head;
-            for(int i = 0 ; i<idx-1 ; i++){
+            for(int i = 0 ; i<=idx-1 ; i++){
                 temp = temp.next;
             }
             Node t  = new Node(val);
             t.next = temp.next;
             temp.next = t;
             size++;
+        }
+    }
+
+    void deleteAtPosition(int idx){
+        if(idx<0 || idx>=size){
+            System.out.println("Invalid index");
+        }
+        else if(idx==0){
+            deleteAtHead();
+        }else{
+            Node temp = head;
+            for(int i = 0 ; i<idx-1 ; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            size--;
         }
     }
 
