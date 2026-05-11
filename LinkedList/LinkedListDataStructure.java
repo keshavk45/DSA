@@ -11,6 +11,7 @@ class Node{
 class LinkedList{
     Node head; //by default starting me null hi hoga
     Node tail; //by default starting me null hi hoga
+    int size = 0;
 
     void addAtTail(int val){
         Node temp = new Node(val);
@@ -19,6 +20,7 @@ class LinkedList{
         }else{
             tail.next = temp;
             tail = temp;
+            size++;
         }
     }
 
@@ -41,6 +43,7 @@ class LinkedList{
         }else{
             temp.next = head;
             head = temp;
+            size++;
         }
     }
 
@@ -49,6 +52,27 @@ class LinkedList{
             System.out.println("Linked List is empty");
         }else{
             head = head.next;
+            size--;
+        }
+    }
+
+    void insertAtPosition(int idx , int val){
+        if(idx<0 || idx>size){
+            System.out.println("Invalid index");
+        }
+        else if(idx==0){
+            addAtHead(val);
+        }else if(idx==size){
+            addAtTail(val);
+        }else{
+            Node temp = head;
+            for(int i = 0 ; i<idx-1 ; i++){
+                temp = temp.next;
+            }
+            Node t  = new Node(val);
+            t.next = temp.next;
+            temp.next = t;
+            size++;
         }
     }
 
@@ -62,6 +86,8 @@ public class LinkedListDataStructure {
         ll.addAtTail(30);
         ll.addAtTail(40);
         ll.addAtHead(5);
+        ll.Display();
+        ll.insertAtPosition(3, 15);
         ll.Display();
     }
     
