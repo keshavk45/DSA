@@ -60,6 +60,34 @@ class DLL{
     
     }
 
+    void deleteAtHead(){
+        if(size==0){
+            System.out.println("List is empty");
+        }else if(size==1){
+            head = tail = null;
+            size--;
+        }else{
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
+    }
+
+        void deleteAtTail(){
+            if(size==0){
+                System.out.println("List is empty");
+            }else if(size==1){
+                head = tail = null;
+                size--;
+            }else{
+                tail = tail.prev;
+                tail.next = null;
+                size--;
+            }
+        }
+
+
+}
 
 
 public class DoublyLinkedList{
