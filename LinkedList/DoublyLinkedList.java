@@ -40,6 +40,23 @@ class DLL{
         size++;
     }
 
+    void display(){
+        ListNode temp = head;
+        while(temp!=null){
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    void displayReverse(){
+        ListNode temp = tail;
+        while(temp!=null){
+            System.out.print(temp.val + " ");
+            temp = temp.prev;
+        }
+        System.out.println();
+
     
     }
 
