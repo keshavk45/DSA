@@ -86,6 +86,31 @@ class DLL{
             }
         }
 
+        void insertAtPosition(int pos, int val){
+            if(pos<1 || pos>size+1){
+                System.out.println("Invalid position");
+                return;
+            }
+            if(pos==1){
+                insertAtHead(val);
+                return;
+            }
+            if(pos==size+1){
+                inserAtTail(val);
+                return;
+            }
+            ListNode temp = new ListNode(val);
+            ListNode curr = head;
+            for(int i=1; i<pos-1; i++){
+                curr = curr.next;
+            }
+            temp.next = curr.next;
+            temp.prev = curr;
+            curr.next.prev = temp;
+            curr.next = temp;
+            size++;
+        }
+
 
 }
 
