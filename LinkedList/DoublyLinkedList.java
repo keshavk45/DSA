@@ -64,6 +64,14 @@ class DLL{
 
 public class DoublyLinkedList{
     public static void main(String[] args) {
+        DLL dll = new DLL();
+        dll.insertAtHead(10);
+        dll.insertAtHead(20);
+        dll.insertAtHead(30);
+        dll.inserAtTail(40);
+        dll.inserAtTail(50);
+        dll.display();
+        dll.displayReverse();
         
     }
 }
