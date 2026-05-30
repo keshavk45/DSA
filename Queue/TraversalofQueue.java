@@ -45,6 +45,14 @@ public class TraversalofQueue {
             System.out.println(element); // Process the element (e.g., print it)
             q.add(element); // Add the element back to the rear of the queue
         }
+        // Traversal using for-each loop
+        displayQueue(q);
+        // Adding an element at a specific index
+        addAtIndex(q, 1, 10); // Add 10 at index
+        System.out.println("Queue after adding 10 at index 1: " + q);
+        // Removing an element at a specific index  
+        removeAtIndex(q, 2); // Remove element at index 2
+        System.out.println("Queue after removing element at index 2: " + q);
     }
 
     
