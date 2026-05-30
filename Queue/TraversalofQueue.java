@@ -3,6 +3,28 @@ import java.util.*;
 
 public class TraversalofQueue {
 
+    private static void addAtIndex(Queue<Integer> q, int index, int element) {
+        int n = q.size();
+        for (int i = 0; i < n; i++) {
+            int currentElement = q.poll(); // Remove the front element
+            if (i == index) {
+                q.add(element); // Add the new element at the specified index
+            }
+            q.add(currentElement); // Add the current element back to the rear of the queue
+        }
+    }
+
+    private static void removeAtIndex(Queue<Integer> q, int index) {
+        int n = q.size();
+        for (int i = 0; i < n; i++) {
+            int currentElement = q.poll(); // Remove the front element
+            if (i != index) {
+                q.add(currentElement); // Add the current element back to the rear of the queue
+            }
+            // If i == index, we skip adding the element back, effectively removing it
+        }
+    }
+
     private static void displayQueue(Queue<Integer> q) {
         System.out.println("Traversal using for-each loop:");
         for (int element : q) {
