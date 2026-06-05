@@ -19,6 +19,13 @@ class Implementation {
         display(root.Right); // right ki saari value print kar dega
     }
 
+    private static int size(Node root){
+        if(root==null) return 0;
+        int leftSize=size(root.Left);
+        int rightSize=size(root.Right);
+        return leftSize+rightSize+1; // +1 for current node
+    }
+
     public static void main(String[] args) {
         //        1
         //      /   \
@@ -39,5 +46,6 @@ class Implementation {
         c.Left=f;
         c.Right=g;
         display(a);
+        System.out.println(size(a));
     }
 }
