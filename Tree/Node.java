@@ -25,6 +25,13 @@ class Implementation {
         int rightSize=size(root.Right);
         return leftSize+rightSize+1; // +1 for current node
     }
+    
+    private static int sum(Node root){
+        if(root==null) return 0;
+        int leftSum=sum(root.Left);
+        int rightSum=sum(root.Right);
+        return leftSum+rightSum+root.val; // +1 for current node
+    }
 
     public static void main(String[] args) {
         //        1
@@ -47,5 +54,6 @@ class Implementation {
         c.Right=g;
         display(a);
         System.out.println(size(a));
+        System.out.println(sum(a));
     }
 }
