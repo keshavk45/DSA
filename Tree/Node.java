@@ -40,6 +40,14 @@ class Implementation {
         return Math.max(leftLevel, rightLevel)+1; // +1 for current node
     }
 
+    private static int preorder(Node root){
+        if(root==null) return 0;
+        System.out.print(root.val+" ");
+        preorder(root.Left);
+        preorder(root.Right);
+        return 0;
+    }
+
     public static void main(String[] args) {
         //        1
         //      /   \
@@ -63,5 +71,8 @@ class Implementation {
         System.out.println(size(a));
         System.out.println(sum(a));
         System.out.println(level(a));
+        System.out.print("Preorder: ");
+        preorder(a);
+        
     }
 }
