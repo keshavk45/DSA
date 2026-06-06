@@ -33,6 +33,13 @@ class Implementation {
         return leftSum+rightSum+root.val; // +1 for current node
     }
 
+    private static int level(Node root){
+        if(root==null) return 0;
+        int leftLevel=level(root.Left);
+        int rightLevel=level(root.Right);
+        return Math.max(leftLevel, rightLevel)+1; // +1 for current node
+    }
+
     public static void main(String[] args) {
         //        1
         //      /   \
@@ -55,5 +62,6 @@ class Implementation {
         display(a);
         System.out.println(size(a));
         System.out.println(sum(a));
+        System.out.println(level(a));
     }
 }
